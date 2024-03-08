@@ -5,7 +5,7 @@ import { COLORS } from '@/constants';
 
 function LiveCursors({others}:LiveCursorProps):React.ReactNode {
   return others.map(({connectionId,presence})=>{
-    if(!presence) return null;
+    if(!presence?.cursor) return null;
 
     return(
         <Cursor

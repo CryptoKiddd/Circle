@@ -1,3 +1,5 @@
+import CursorSVG from "@/public/assets/CursorSVG"
+
 type Props = {
     color:string,
     message:string,
@@ -8,8 +10,11 @@ type Props = {
 function Cursor({
     color,x,y,message
 }:Props) {
+    
   return (
-    <div>Cursor</div>
+    <div className="pointer-events-none absolute " style={{ top:`${y}px`, left:`${x}px`}}>
+      <CursorSVG color={color} />
+    </div>
   )
 }
 
